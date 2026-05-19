@@ -1,0 +1,35 @@
+{
+  "skill_name": "sensors-motors-reference",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just bought an HC-SR04 ultrasonic sensor and want to connect it to my Arduino Uno. How do I wire it and what code do I need to measure distance?",
+      "expected_output": "Pinout table showing VCC→5V, GND→GND, Trig→digital pin, Echo→digital pin. Distance formula (duration/58 for cm). Working Arduino code snippet. Mention of 10µs trigger pulse. At least one gotcha (voltage divider for 3.3V boards, or timeout for pulseIn).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "What's the difference between NEMA17 with A4988 vs DRV8825 driver? I'm building a small CNC router and need to pick one. Also how do I set the current limit?",
+      "expected_output": "Comparison table or clear differences: max current (2A vs 2.5A), microstepping (1/16 vs 1/32), voltage range. Current limit procedure: Vref formula for each driver (A4988: Vref=Imax×8×Rsense; DRV8825: Vref=Imax×5×Rsense). Practical recommendation for CNC use.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I have a soil moisture sensor module with 4 pins (VCC, GND, AO, DO). I'm using a ESP32. How do I read both the analog and digital outputs? What values mean dry vs wet?",
+      "expected_output": "Pin mapping. Note about ESP32 being 3.3V (works fine). Code using ADC read on AO. Explanation that high ADC = dry, low ADC = wet (counterintuitive). Note about DO being active-low. Note about capacitive sensors being better for long-term use.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "How do I control an SG90 servo to sweep from 0 to 180 degrees and back using MicroPython on an ESP32?",
+      "expected_output": "MicroPython PWM code at 50 Hz. Correct duty cycle calculation for 0°, 90°, 180°. Sweep loop. Note about power (not from ESP32 3.3V pin for heavy use). Pulse width values.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "My DHT22 sensor keeps returning NaN on Arduino. I'm using pin 4, 5V, and the DHT library. What's wrong?",
+      "expected_output": "Troubleshooting checklist: missing/wrong pullup resistor (10kΩ needed), reading too fast (need 2s between reads), wrong sensor type in code (DHT22 not DHT11), wiring issue. Corrected code snippet showing delay(2000) and DHT22 type.",
+      "files": []
+    }
+  ]
+}
