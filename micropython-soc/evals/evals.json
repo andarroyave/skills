@@ -1,0 +1,23 @@
+{
+  "skill_name": "micropython-soc",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I just got an ESP8266 NodeMCU board and I want to flash MicroPython on it for the first time. I have it connected via USB on Linux. Walk me through the whole process step by step.",
+      "expected_output": "Step-by-step guide covering: finding the serial port (/dev/ttyUSB0), installing esptool, downloading the firmware .bin, erasing flash, writing firmware, and verifying with mpremote repl",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "I have MicroPython running on my ESP8266. I want to read a temperature sensor connected via I2C (SDA on GPIO4, SCL on GPIO5) and blink the built-in LED every time a reading is taken. Write me the MicroPython code for this and explain how to get it onto the board.",
+      "expected_output": "MicroPython code using machine.I2C with correct pins, Pin(2) for the LED (active-low noted), and mpremote commands to deploy the file",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "My ESP8266 MicroPython board keeps crashing silently — I push the code with mpremote and then nothing happens. How do I figure out what's going wrong? Is there a way to see the error output?",
+      "expected_output": "Debugging guidance: mpremote repl to see REPL output, try/except with sys.print_exception in main.py, using mpremote run to test before saving to board, soft reset vs hard reset",
+      "files": []
+    }
+  ]
+}

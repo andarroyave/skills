@@ -1,0 +1,23 @@
+{
+  "skill_name": "git-github",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I accidentally committed some debug code directly to main and already pushed it. I need to undo that commit without losing the changes (I want to move them to a feature branch instead). How do I do this safely?",
+      "expected_output": "Uses git revert for the pushed commit (safe), or explains the git reset + branch approach clearly. Warns about force-pushing to main. Explains how to move changes to a new branch.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "I finished a feature on my branch 'feature/user-auth'. I want to open a pull request to main, add my teammate @jsmith as reviewer, link it to issue #88, and make sure CI passes before merging. Walk me through the gh commands.",
+      "expected_output": "gh pr create with --reviewer and body referencing Closes #88, gh pr checks, gh pr merge with --squash or --delete-branch.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I've been working on a feature branch for 3 days and main has moved on a lot. When I try to merge main into my branch I'm getting conflicts in src/auth.py and src/config.py. What's the best way to resolve this and get my branch up to date?",
+      "expected_output": "git fetch origin, git rebase origin/main (or merge), explains conflict markers, git add + git rebase --continue, mentions git rebase --abort as escape hatch.",
+      "files": []
+    }
+  ]
+}
